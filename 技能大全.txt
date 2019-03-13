@@ -15,4 +15,6 @@ slice	可以使用负数
 replace('值','值') 替换
 match	匹配没有就null
 
+npm run serve	跑起项目
+
 

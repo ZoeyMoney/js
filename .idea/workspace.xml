@@ -62,8 +62,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="787" />
-    <option name="y" value="157" />
+    <option name="x" value="565" />
+    <option name="y" value="10" />
     <option name="width" value="1290" />
     <option name="height" value="785" />
   </component>
@@ -94,7 +94,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../css3/css3唯美动画" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hello-ui" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
