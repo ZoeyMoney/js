@@ -1,0 +1,18 @@
+百度网盘：ewad910 1984898516
+
+sysprep	系统恢复如新(意思是重做)
+
+
+parseInt	整数
+parseFloat 浮点
+charAt(值)	获取字符串的某个子
+toUpperCase()	变成大写
+length	长度
+indexOf(值)	下标	indexOf("e")	返回字符串e的长度
+lastIndexOf(值)	字符串最后下标
+substring	(3)	截取前3个然后输出
+slice	可以使用负数
+replace('值','值') 替换
+match	匹配没有就null
+
+

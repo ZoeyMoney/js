@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js</title>
+</head>
+<script>
+    /*js变量和数据类型*/
+    /*转换整型*/
+    document.write('<h3>整型转换</h3>');
+    document.write(parseInt('67red')+'<br/>');
+    document.write(parseInt('5.50')+'<br/>');
+    document.write(parseInt('0xc')+'<br/>');
+    document.write(parseInt('haod')+'<br/>');
+
+    /*转换浮点*/
+    document.write('<h3>浮点转换</h3>');
+    document.write(parseFloat('67red')+'<br/>');
+    document.write(parseFloat('5.50')+'<br/>');
+    document.write(parseFloat('0xc')+'<br/>');
+    document.write(parseFloat('haode')+'<br/>');
+
+    /*常用方法*/
+    document.write('<h3>js中常用类型</h3>');
+    var got = 'djwi-dwad-ooinh kjkgsjgkrh';
+    document.write(got.charAt('3')+'<br/>');    /*截取字符串中的第三个  i*/
+    document.write(got.toUpperCase()+'<br/>');  /*全部变成大写*/
+    document.write(got.length+'<br/>');     /*获取got的长度 28*/
+    document.write(got.indexOf('q')+'<br/>');   /*获取q的长度 9*/
+    document.write(got.lastIndexOf('y')+'<br/>');   /*获取y的长度 29*/
+    document.write(got.substring(3)+'<br/>');   /*截取前三个然后输出后面的字符串*/
+    document.write(got.slice(2)+'<br/>');   /*可以使用负数、当是负数的时候 则从最后一个开始-2的时候  wy*/
+    document.write(got.replace('q','h')+'<br/>');   /*替换：把所有q替换成h*/
+    document.write(got.match('a')+'<br/>');     /*匹配a a 没有a就是null*/
+    document.write(got.search('j')+'<br/>');    /*匹配d 下标1 没有d就是-1*/
+    /*分割*/
+    /*var arr = got.split('-'); //有-的都切割掉
+    for (i = 0; i < got.length; i++) {
+            alert(arr[i]);
+    }*/
+
+    /*遍历*/
+    document.write('<h3>遍历</h3>'+'<br/>');
+    var arr = new Array(5);
+    arr[0] = 1;
+    arr[1] = 2;
+    arr[2] = 3;
+    arr[3] = 4;
+    arr[5] = 5;
+    for (var index in arr) {
+        document.write(arr[index]+'<br/>')
+    }
+    /*错误信息*/
+    document.write('<h3>错误信息</h3>');
+    try{
+        var a = 5;
+        if (a == 5) {
+            throw new Error('报错');
+        }
+    }catch(e){
+        document.write('报错信息：'+e.message+'<br/>');
+    }finally {
+        document.write('finally<br/>');
+    }
+
+    /*js对象的创建*/
+    /*function对象*/
+    document.write('<h3>js对象的创建</h3>');
+    function studnet(name,age) {
+        this.name = name ;
+        this.age = age;
+        this.info = function () {
+            document.write('名字：'+this.name+"<br/>年龄："+age+this.age);
+        }
+    }
+    var s1 = new studnet('张三',30+'<br/>');
+    s1.info();
+
+    /*object对象*/
+    var stu = new Object();
+    stu.name = 'zhangsna';
+    stu.age = 123;
+    stu.infoe = function () {
+        document.write('名字：'+this.name+'<br/>年龄：'+this.age+'<br/>');
+    }
+    stu.infoe();
+
+    /*josn对象*/
+    var  per = {
+        'name':'mnn',
+        'age':23,
+        'infoq':function () {
+            document.write('名字：'+this.name+'<br/>年龄：'+this.age+'<br/>');
+        }
+    }
+    per.infoq();
+    document.write('josn'+"<br/>");
+    var son = {
+        'name':'hai',
+        'age':99,
+        'son':[
+            {
+            'name': '111',
+            'age': 111,
+        },
+            {
+                'name': '222',
+                'age': 222,
+            }
+        ],
+        'teot':function () {
+            document.write('名字：'+this.name+'<br/>年龄：'+this.age+'<br/>');
+            for (var chld in this.son) {
+                document.write('<br/>名字：'+this.son[chld].name+'年龄：'+this.son[chld].age);
+            }
+        }
+    }
+    son.teot();
+
+    /*走动定时器*/
+    document.write('<h3>走动定时器</h3>');
+    function set() {
+        var a = new Date();
+        var hour = a.getHours();    //小时
+        if (hour < 10) {
+            hour='0'+hour;
+        }
+       var minuter = a.getMinutes();    //分钟
+        if (minuter < 10) {
+            minuter = '0'+minuter;
+        }
+        var seconds = a.getSeconds();   //秒
+        if (seconds < 10) {
+            seconds = '0'+seconds;
+        }
+        document.getElementById('display').innerHTML=hour+':'+minuter+':'+seconds;
+    }
+    var t = window.setInterval('set()',1000);
+
+</script>
+<body>
+<div id="display"></div>
+
+<!--前进后退-->
+<a href="javascript:history.go(1);">前进一页</a>
+<a href="javascript:history.go(-1);">后退一页</a>
+
+
+
+<div id="mydiv">我的div</div>
+<textarea name="test" id="content" cols="30" rows="10">你好</textarea>
+<input type="text" id="txtName" value="dian">
+<input type="button" id="btn" value="访问3个元素的内容">
+<div id="core"></div>
+
+<!--DOM对象对HTML元素访问-->
+<ul id="names">
+    <li>11111</li>
+    <li>22222</li>
+    <li id="n3">33333</li>
+    <li>44444</li>
+    <li>55555</li>
+</ul>
+<div id="dom">
+    <input type="button" value="父节点" onclick="n3(curr.parentNode)"> <!--parentNode获取所有父节点  输出：所有li-->
+    <input type="button" value="第一个子节点" onclick="n3(curr.parentNode.firstChild.nextSibling)">   <!--parentNode获取父节点后-> firstChild换行也算子节点 -> nextSibling下一个子节点-->
+    <input type="button" value="上一个子节点" onclick="n3(curr.previousSibling.previousSibling)"> <!--previousSibling上一个子节点-->
+    <input type="button" value="下一个子节点" onclick="n3(curr.nextSibling.nextSibling)"> <!--nextSibling下一个子节点-->
+    <input type="button" value="最后一个子节点" onclick="n3(curr.parentNode.lastChild.previousSibling)">
+    <input type="button" value="得到所有的li元素个数" onclick="cuo()">
+</div>
+<script>
+    /*DOM对象对HTML元素访问*/
+    var curr = document.getElementById('n3');
+    function n3(tagter) {
+        alert(tagter.innerHTML);
+    }
+    function cuo() {
+        var c = document.getElementById('names').getElementsByTagName('li');
+        alert(c.length);
+    }
+</script>
+
+
+<!--查找表单控件-->
+<form action="www.baidu.com" id="mForm" method="post" target="_blank">
+    <input type="text" name="username" value="Hello Word">
+    <input type="text" name="password" value="123456">
+    <select name="city" id="d">
+        <option value="shanghai">上海</option>
+        <option value="beijing" selected="selected">北京</option>
+    </select>
+    <input type="button" value="获取表单内第一个控件" onclick="alert(document.getElementById('mForm').elements[0].value)">    <!--elements只能用于表单-->
+    <input type="button" value="获取表单内第二个控件" onclick="alert(document.getElementById('mForm').elements['password'].value)">
+    <input type="button" value="获取表单内第三个控件" onclick="alert(document.getElementById('mForm').city.value)">
+    <input type="button" value="操作表单" onclick="cao()">
+</form>
+<script>
+    function cao() {
+        var myform = document.forms[0];
+        //alert(myform.action);
+        myform.submit();  //提交表单  提交到action
+
+    }
+</script>
+
+
+<!--修改-->
+<table id="mytable" border="1">
+    <caption>表单元格</caption>
+    <tr>
+        <td>11111</td>
+        <td>222222</td>
+    </tr>
+    <tr>
+        <td>333333</td>
+        <td>444444</td>
+    </tr>
+    <tr>
+        <td>555555</td>
+        <td>666666</td>
+    </tr>
+</table>
+<input type="button" value="表格标题" onclick="alert(document.getElementById('mytable').caption.innerHTML)">
+<input type="button" value="第一行、第一格" onclick="alert(document.getElementById('mytable').rows[0].cells[0].innerHTML)">     <!--rows所有行,cells列-->
+<input type="button" value="第二行、第二格" onclick="alert(document.getElementById('mytable').rows[1].cells[1].innerHTML)">
+<input type="button" value="第三行、第二格" onclick="alert(document.getElementById('mytable').rows[2].cells[1].innerHTML)">
+<br>
+第 <input type="text" id="row" size="2">行，第<input type="text" id="cel" size="2">列的值为 <input type="text" id="teXt">
+<input type="button" id="btn_set" value="修改">
+<script>
+    var b = document.getElementById('btn_set');
+    function out() {
+        var row = document.getElementById('row').value;
+        var cell = document.getElementById('cel').value;
+        var text = document.getElementById('teXt').value;
+        var myforn = document.getElementById('mytable');
+        myforn.rows[row-1].cells[cell-1].innerHTML = text;
+    }
+    b.onclick = function () {
+        out();
+    }
+</script>
+
+<!--鼠标键盘事件-->
+<!--
+        鼠标事件
+    onclick     单击鼠标左键触发
+    ondblclick   双击鼠标左键触发
+    onmousedown     单击任意一个鼠标按键时触发
+    onmouseout      鼠标指针移出一个元素边界时触发
+    onmousemove     鼠标在某个元素上移动时持续触发
+    onmouseup       松开鼠标任意一个按键时触发
+    onmouseover     鼠标指针移到一个元素上时触发
+
+        键盘事件
+    onkeydown       按下键盘上某个按键时触发，一直按会持续触发
+    onkeyup         释放某个按键时触发
+    onkeypress      按下某个按键并产生字符时触发，忽略shift等功能键
+
+-->
+<div class="on">
+<img src="img/timg.jpg" alt="img" style="width: 300px;">
+    <textarea rows="4" clos="50"></textarea>
+<div id="displays"></div>
+</div>
+<script>
+    function handle(oEvent) {
+        if (window.event) oEvent = window.event;    //处理兼容性，获得事件对象
+        var oDiv = document.getElementById('displays');
+        oDiv.innerHTML += oEvent.type+'<br/>';  //输出事件名
+    }
+    window.onload = function () {
+        var textArea = document.getElementsByTagName('textarea')[1];
+        var oImg = document.getElementsByTagName('img')[0];
+        oImg.onmouseover = handle;  //  鼠标事件除了mousemove外都监听
+        oImg.onmouseup = handle;
+        oImg.onmousedown = handle;
+        oImg.onmouseout = handle;
+        oImg.onclick = handle;
+        oImg.ondblclick = handle;
+
+        textArea.onkeydown = handle;
+        textArea.onkeypress = handle;
+        textArea.onkeyup = handle;
+    }
+</script>
+
+
+
+<h3>增加</h3>
+<!--增加-->
+<div id="uo">
+    <li>你好！！！</li>
+</div>
+<div class="crea">
+    <form action=".idea" id="myform">
+    <input type="text" value="" id="a1">
+    <input type="button" value="增加" id="zeng">
+    <input type="button" value="删除" id="del">
+    </form>
+</div>
+
+<script>
+
+
+    /*增加*/
+    var myform = document.getElementById('myform');
+    var inp = document.getElementById('zeng');
+    var del = document.getElementById('del');
+    function test() {
+        var uo = document.getElementById('uo');
+        var cc = document.createElement('li');
+        var go = document.getElementById('a1').value;
+        if (go == '') {
+            alert('不能为空')
+        }else {
+            uo.appendChild(cc).innerHTML = go;
+            alert('添加成功');
+        }
+    }
+    inp.onclick = function () {
+        test();
+        myform.reset();
+    }
+    /*删除*/
+    del.onclick = function () {
+        var uo = document.getElementById('uo');
+        var ui = uo.lastChild;
+        uo.removeChild(ui);
+    }
+
+    /*使用getelemtnID查找元素*/
+    /*我的div*/
+    var btn = document.getElementById('btn');
+    var core = document.getElementById('core');
+    function mydiv() {
+        var mdiv,content,txtName;
+        with(document){
+             mdiv = getElementById('mydiv');
+             content = getElementById('content');
+             txtName = getElementById('txtName');
+        }
+        document.write(mdiv.innerHTML+'\n'+content.innerHTML+'\n'+txtName.value);
+    }
+    btn.onclick = function () {
+        core.innerHTML = mydiv();
+    }
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
