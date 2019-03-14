@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    *{margin: 0;padding: 0;}
+    .loading{position: fixed;left: 0;right: 0;bottom: 0;top: 0;background: #fff;z-index: 100;}
+    .pic{width: 64px;height: 64px;background: url("img/805.gif");position: absolute;
+        left: 0;
+        right: 0;bottom: 0;
+        top: 0;margin: auto;}
+</style>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    document.onreadystatechange = function () {
+        if (document.readyState == "complete") {
+            $(".loading").fadeOut()
+        }
+    }
+</script>
+<body>
+<div class="loading">
+    <div class="pic"></div>
+</div>
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552557335863&di=cd6068143c3f9de9e53ccc9593f69544&imgtype=0&src=http%3A%2F%2Fpic3.16pic.com%2F00%2F03%2F88%2F16pic_388730_b.jpg"
+     alt="明日">
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552557336020&di=0f6beb93a064a279da5ec7f12e369384&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Fb812c8fcc3cec3fdbeabec4cdd88d43f87942775.jpg"
+     alt="nihao ">
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552557336019&di=812cb4718783670b9db36403e4c246ef&imgtype=0&src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201403%2F23%2F210134o8y38c7m8y4726xa.jpg"
+     alt="d">
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552557400974&di=f77af11bfb093cac8c7a4b76e8df3eff&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201604%2F04%2F20160404185125_GfKhP.thumb.700_0.jpeg"
+     alt="dd">
+</body>
+</html>
